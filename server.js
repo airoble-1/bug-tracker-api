@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 const initialize = async () => {
   try {
     await sequelize.sync();
-    console.log("Database Ccnnected successfully!");
+    console.log("Database Connected successfully!");
     app.listen(HTTP_PORT, () => {
       console.log(`Express http server listening on ${HTTP_PORT}`);
     });
