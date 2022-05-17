@@ -1,18 +1,19 @@
 require("dotenv").config();
 
-const express = require("express");
-const app = express();
 const HTTP_PORT = process.env.PORT || 8080;
-
-const cors = require("cors");
-app.use(cors()); // allow Cross-domain requests
-app.use(express.json()); // Access req.body in JSON format
 
 const sequelize = require("./database/database");
 
-app.get("/", (req, res) => {
-  res.json("Hello World!");
-});
+const cors = require("cors");
+const express = require("express");
+const app = express();
+
+const router = require("./routes");
+
+app.use(cors()); // allow Cross-domain requests
+app.use(express.json()); // Access req.body in JSON format
+
+app.use(router);
 
 const initialize = async () => {
   try {

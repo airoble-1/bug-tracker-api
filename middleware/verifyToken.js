@@ -8,7 +8,7 @@ module.exports = async (req, res, next) => {
     if (!jwtToken) {
       res.status(401).json({
         error: {
-          message: "Not Authorized1",
+          message: "Not Authorized",
         },
       });
     } else {

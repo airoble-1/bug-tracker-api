@@ -7,7 +7,7 @@ function jwtGenerator(user_id) {
   };
 
   return jwt.sign(payload, process.env.jwtSecret, {
-    expiresIn: process.env.jwtExpy,
+    expiresIn: process.env.jwtExp,
   });
 }
 
