@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const routers = require("./api");
-router.use("/api", routers);
+const verifyToken = require("../middleware/verifyToken");
+
+router.use("/api", verifyToken, routers);
 
 module.exports = router;

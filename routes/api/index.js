@@ -1,9 +1,7 @@
 const router = require("express").Router();
 
-const loginRouter = require("./login");
-const registerRouter = require("./register");
+const protectedRouter = require("./protected");
 
-router.use(loginRouter);
-router.use(registerRouter);
+router.use(protectedRouter);
 
 module.exports = router;

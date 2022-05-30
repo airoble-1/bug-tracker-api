@@ -8,11 +8,15 @@ const cors = require("cors");
 const express = require("express");
 const app = express();
 
+const login = require("./routes/api/login");
+const register = require("./routes/api/register");
 const router = require("./routes");
 
 app.use(cors()); // allow Cross-domain requests
 app.use(express.json()); // Access req.body in JSON format
 
+app.use(register);
+app.use(login);
 app.use(router);
 
 const initialize = async () => {
