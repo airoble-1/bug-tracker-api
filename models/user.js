@@ -6,6 +6,11 @@ const User = db.define("User", {
   lastName: Sequelize.STRING,
   email: Sequelize.STRING,
   password: Sequelize.STRING,
+  role: {
+    type: Sequelize.STRING,
+    enum: ["submitter", "developer", "project_manager", "admin"],
+    defaultValue: "submitter",
+  },
 });
 
 module.exports = User;
